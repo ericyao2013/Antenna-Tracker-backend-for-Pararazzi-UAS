@@ -3,6 +3,33 @@ PPRZ BeagleBone Antenna Tracker Control Module Backend
 This project is an intend to create an antenna tracker for [Paparazzi UAS][paparazzi_link] sytem with a BeagleBoneBlack (BBB) development card. 
 It uses a pan tilt mechanism with DC motor-optical encoder, or servo motors to track desired AC.
 
+##Install
+Compiling the code is fairly straightforward. 
+
+```shell
+git clone https://github.com/savass/pprz_ant_tracker_backend.git
+cd pprz_ant_tracker_backend
+``` 
+For servo controlled pan-tilt mechanisms;
+
+```shell
+make ant_tr_pwm
+```
+which will create `ant_tr_pwm` file. 
+Also for dc-motor (with optic encoder) controlled pan-tilt mechenisms;
+
+```shell
+make ant_tr_dc
+```
+which will create `ant_tr_dc` file. 
+
+If on board gps module will be used;
+```shell
+make gpsd2ivy
+```
+will create modified gpsd2ivy app. 
+
+
 ## Using Build in Optical Encoders of BBB
 
 BBB has build in eQep modules which can be used to read encoder values. No additional harware required.

@@ -151,7 +151,7 @@ void on_FLIGHT_PARAM_STATUS(IvyClientPtr app, void *user_data, int argc, char *a
 void on_TRACKER_PARAM_STATUS(IvyClientPtr app, void *user_data, int argc, char *argv[]){
 
   //Fill device status values if this is the msg we are looking for.. 
-  if atoi(atof(argv[0]) == TRACKER_ID) {
+  if ( atoi(argv[0]) == TRACKER_ID ) {
     DevStatus[0].altitude = atof(argv[8]);
     DevStatus[0].longitude = atof(argv[5]);
     DevStatus[0].latitude = atof(argv[4]);
